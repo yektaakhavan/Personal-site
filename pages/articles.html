@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jalali-moment/dist/jalali-moment.browser.js"></script>
+    <script src="/pages/navs.js"></script>
+    <link rel="stylesheet" href="/pages/navs.css">
+    <title>Articles</title>
+
+
+    <style>
+        .container-main {
+            max-width: 1000px;
+            margin: 20px auto;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .right {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            width: 70%;
+            box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.39);
+            -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.39);
+            -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.39);
+            border-radius: 5px;
+            height: 100%;
+        }
+
+
+        .article-photo1,
+        .article-photo2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+
+        .article-photo1 img,
+        .article-photo2 img {
+            width: 85%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .title {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 25px;
+            text-shadow: -4px -1px 25px rgba(139, 96, 96, 0.58);
+        }
+
+        .text p {
+            width: 85%;
+            margin: 20px auto;
+            text-align: justify;
+            line-height: 2rem;
+        }
+
+        .left {
+            width: 30%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            padding: 20px;
+            text-align: justify;
+            line-height: 2rem;
+        }
+
+        .today {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .latest-articles {
+            text-decoration: overline underline;
+            text-decoration-color: #00addb;
+            margin: 20px 0;
+            word-spacing: 10px;
+        }
+
+        .entry {
+            position: relative;
+            margin-bottom: 24px;
+            min-height: 50px;
+        }
+
+        .entry img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 66px;
+            height: 66px;
+            text-align: center;
+            padding: 4px;
+        }
+
+        .entry-desc {
+            position: relative;
+            margin-left: 65px;
+        }
+
+        .entry-title {
+            margin-bottom: 5px;
+        }
+
+        .entry-title a {
+            color: #282828;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1;
+            text-transform: capitalize;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .entry-title a:hover {
+            color: #00addb;
+        }
+
+        .entry-meta a {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 20px;
+            font-style: italic;
+            color: #616161;
+        }
+
+
+        .comment {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 20px;
+            height: auto;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            border-radius: 5px;
+        }
+
+
+        .co-title {
+            font-size: 20px;
+            text-decoration: underline double #00addb;
+        }
+
+
+        .user {
+            color: #9b9b9b;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .specs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .specs input {
+            border: 1px solid #eee;
+            color: #9b9b9b;
+            border-radius: 5px;
+            padding: 10px;
+            width: 50%;
+            height: 50px;
+            color: #9b9b9b;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: text;
+        }
+
+        .comment textarea {
+            border: 1px solid #eee;
+            color: #9b9b9b;
+            border-radius: 5px;
+            line-height: 49px;
+            margin-bottom: 30px;
+            padding: 10px;
+            overflow: auto;
+            color: #9b9b9b;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: text;
+        }
+
+        .comment .post-comment {
+            width: 100%;
+            text-align: center;
+            padding: 5px auto;
+            color: white;
+            background-color: #0f1258;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 400;
+            border-radius: 5px;
+        }
+
+        .comment .post-comment:hover {
+            background-color: #00addb;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .specs input:focus,
+        .comment textarea:focus {
+            border: 1px solid #00addb;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .specs input::placeholder,
+        .comment textarea::placeholder {
+            transition: opacity 0.3s ease;
+        }
+
+        .specs input:focus::placeholder,
+        .comment textarea:focus::placeholder {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <header class="container-fluid image" id="home">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/picture/logo/logo.kha.png" alt="logo" />
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/index.html">خانه</a></li>
+                        <li><a href="/index.html">درباره ما</a></li>
+                        <li><a href="/pages/articles.html">مقالات</a></li>
+                        <li><a href="/pages/books.html">کتاب ها</a></li>
+                        <li><a href="/index.html">ارتباط با ما</a></li>
+                    </ul>
+                </div>
+                <div class="shopping">
+                    <ul>
+                        <li>
+                            <a style="all: unset;" href="/pages/shopping_cart.html"><i class="fa fa-shopping-cart"
+                                    aria-hidden="true"></i></a>
+                            <div class="shop_tooltip">سبد خرید</div>
+                        </li>
+                        <li>
+                            <a style="all: unset;" href="/pages/creat_account.html"><i class="fa fa-user"
+                                    aria-hidden="true"></i></a>
+                            <div class="shop_tooltip">حساب کاربری</div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-main">
+        <div class="right">
+            <div class="article-photo1">
+                <img src="/picture/article/GoodNight/Digital-GoodNight (2).jpg" alt="Digital-GoodNight">
+            </div>
+            <div class="title">
+                <h3>تکنیک شب به خیر دیجیتال</h3>
+            </div>
+            <div class="text">
+                <p>اغلب مردم با اين مشكل روبه رو هستند كه نمى توانند شب ها زود بخوابند و گاهى تا ساعت دو يا سه
+                    بامداد
+                    بيدارند كه نتيجه‌اش معلوم است.
+                    اكثر مردم به‌علت سرگرم بودن به تلويزيون يا موبايل دير مىﺧﻮابند. کم‌تر پيش می‌آيد كه به‌خاطر
+                    گفتﻭگو
+                    با خانواده تا ديروقت بيدار باشند. خودتان پی برده‌ايد كه بيشترين وقت‌کشی‌ها از قِبل چه چيزهايى
+                    است.
+                    يک راهى كه مى‌تواند كمكتان كند، تكنيك 《شب به‌خير ديجيتال》 است.
+                    شب به‌خير ديجيتال به اين صورت است كه هر شب به طور ثابت، ساعتى رابه دل‌خواه، مثلاً ساعت ۲۲ یا ۲۱
+                    يا
+                    هر
+                    ساعتى كه صلاح مى‌دانيد، براى شب به‌خير ديجيتال در نظر بگيريد و همه اعضاى خانواده، تكرار مىكنم
+                    همه
+                    اعضاى خانواده، هرگونه وسيله ديجيتالى را خاموش كنند يا كنارگذارند و ديگر از آن‌ها استفاده نكنند.
+                    سپس لحظات گران‌قدر كنارِهم بودن واقعى در خانواده را احساس كنيد. حال مى‌توانيد دورهم به صحبت‌كردن
+                    مشغول شويد يا کتاب بخوانيد يا بدون مزاحمتِ آن دستگاه‌ها با فرزند يا فرزندان خود بازى و گفتﻭگو
+                    كـنيد
+                    واگر باپدر و مادرتان زندگى مى‌كنيد، لحظات طلايیِ با آن‌ها بودن را از دست ندهيد.</p>
+            </div>
+            <div class="article-photo2">
+                <img src="/picture/article/GoodNight/Digital-GoodNight (1).jpg" alt="Digital-GoodNight">
+            </div>
+            <div class="text">
+                <p>وقتی مشغولیات دیجیتالی نداشته باشید، وقت کم نمی‌آورید و می‌توانید زودتر به رخت‌خواب بروید و صبح
+                    فردا
+                    به موقع بیدار شوید و پر انرژی باشید؛ ولی وقتی دیر می‌خوابید، فردای آن روز دیر بیدار می‌شوید،
+                    بی‌حوصله و کم انرژی خواهید بود و مسلماً کسی دوست ندارد در محل کار با فردی بی‌حوصله و کم انرژی
+                    روبرو
+                    شود.
+                    همچنین کمبود خواب باعث عدم تمرکز کافی، کاهش بهره‌وری و افزایش اشتباهات می‌شود.
+                    ای کاش شبکه‌های تلویزیونی پایان برنامه‌ها را ساعت ۲۲ یا ۲۳ در نظر می‌گرفتند تا نوعی هم افزایی
+                    عمومی
+                    در پیشرفت زندگی‌ها رخ می‌داد؛ ولی متاسفانه تازه ساعت ۲۳ برنامه‌های پربیننده و فیلم‌های سینمایی
+                    جذاب
+                    شروع می‌شود.</p>
+            </div>
+        </div>
+
+        <div class="left">
+
+            <div class="today">
+                <p>امروز : </p>
+                <div id="date"></div>
+            </div>
+
+            <div class="latest-articles">
+                <h2>آخرین مقالات</h2>
+            </div>
+
+            <div class="entry">
+                <img src="/picture/article/GoodNight/Digital-GoodNight (3).jpg" alt="تکنیک شب به خیر دیجیتال">
+                <div class="entry-desc">
+                    <div class="entry-title">
+                        <a href="/pages/articles.html">تکنیک شب به خیر دیجیتال</a>
+                    </div>
+                    <div class="entry-meta">
+                        1403/10/23
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="comment">
+        <h3 class="co-title">ثبت نظر</h3>
+        <p class="user">کاربر گرامی، ایمیل شما منتشر نمی شود و بعد از دریافت پاسخ از طریق ایمیل به شما اطلاع رسانی می
+            شود.
+        </p>
+        <div class="specs">
+            <input type="text" id="username" placeholder="نام و نام خانوادگی">
+            <input type="email" id="email" placeholder="ایمیل">
+        </div>
+        <textarea name="" id="your-comment" placeholder="نظر شما"></textarea>
+        <button class="post-comment">نظر خود را ثبت کنید</button>
+    </div>
+
+    <footer class="container-fluid">
+        <div class="footer">
+            <div class="access">
+                <p>دسترسی سریع</p>
+                <ul>
+                    <li><a href="/index.html">خانه</a></li>
+                    <li><a href="/index.html">درباره ما</a></li>
+                    <li><a href="/pages/articles.html">مقالات</a></li>
+                    <li><a href="/pages/books.html">کتاب ها</a></li>
+                    <li><a href="/index.html">ارتباط با ما</a></li>
+                </ul>
+            </div>
+            <div class="social-networks">
+                <p>ما را در شبکه های اجتماعی دنبال کنید.</p>
+                <ul class="media">
+                    <li class="icon-content">
+                        <a class="link" data-social="instagram" aria-label="instagram" href="instagram">
+                            <svg xml:space="preserve" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">
+                                <path fill="currentColor"
+                                    d="M 21.580078 7 C 13.541078 7 7 13.544938 7 21.585938 L 7 42.417969 C 7 50.457969 13.544938 57 21.585938 57 L 42.417969 57 C 50.457969 57 57 50.455062 57 42.414062 L 57 21.580078 C 57 13.541078 50.455062 7 42.414062 7 L 21.580078 7 z M 47 15 C 48.104 15 49 15.896 49 17 C 49 18.104 48.104 19 47 19 C 45.896 19 45 18.104 45 17 C 45 15.896 45.896 15 47 15 z M 32 19 C 39.17 19 45 24.83 45 32 C 45 39.17 39.169 45 32 45 C 24.83 45 19 39.169 19 32 C 19 24.831 24.83 19 32 19 z M 32 23 C 27.029 23 23 27.029 23 32 C 23 36.971 27.029 41 32 41 C 36.971 41 41 36.971 41 32 C 41 27.029 36.971 23 32 23 z">
+                                </path>
+                            </svg>
+                        </a>
+                        <div class="tooltip">instagram</div>
+                    </li>
+                    <li class="icon-content">
+                        <a class="link" data-social="linkedin" aria-label="linkedin" href="linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                viewBox="0 0 50 50">
+                                <path fill="currentColor"
+                                    d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
+                                </path>
+                            </svg>
+                        </a>
+                        <div class="tooltip">linkedin</div>
+                    </li>
+                    <li class="icon-content">
+                        <a class="link" data-social="facebook" aria-label="facebook" href="#facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                viewBox="0 0 50 50">
+                                <path fill="currentColor"
+                                    d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <div class="tooltip">facebook</div>
+                    </li>
+                    <li class="icon-content">
+                        <a class="link" data-social="telegram" aria-label="Telegram" href="#telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                viewBox="0 0 50 50">
+                                <path fill="currentColor"
+                                    d="M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445	c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758	c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125	c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077	C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z">
+                                </path>
+                            </svg>
+                        </a>
+                        <div class="tooltip">Telegram</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="symbols">
+                <img src="/picture/symbols/enemad.png" alt="enemad">
+                <img src="/picture/symbols/zarinpal.png" alt="zarinpal">
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <i class="fa fa-copyright" style="color: white; font-size:17px;"></i>
+            <p class="low">تمامی حقوق این وب سایت متعلق به تیم اخوان صفائی می باشد.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
