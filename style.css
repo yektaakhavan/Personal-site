@@ -87,7 +87,8 @@ p {
   font-size: 20px;
 }
 
-/* ثابت کردن منو هنگام اسکرول بعد از یه عرض خاصی */
+/* Fix menu when scrolling past a certain width */
+
 .navbar.sticky {
   position: fixed;
   top: 0;
@@ -312,7 +313,6 @@ p {
 }
 
 .hoverEffect div {
-  /* background: rgb(222, 0, 75); */
   background: linear-gradient(90deg, rgb(206, 134, 158) 0%, rgba(191, 70, 255, 1) 49%, rgba(0, 212, 255, 1) 100%);
   border-radius: 40rem;
   width: 10rem;
@@ -323,18 +323,6 @@ p {
   opacity: 0.5;
   cursor: pointer;
 }
-
-
-/* @keyframes effect {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-} */
-
 
 
 .articles-pub {
