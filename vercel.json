@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1.html",
+      "status": 200
+    },
+    {
+      "src": "/pages/(.*)",
+      "dest": "/pages/$1.html"
+    }
+  ]
+}
