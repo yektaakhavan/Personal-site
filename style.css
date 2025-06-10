@@ -104,7 +104,7 @@ p {
 
 /* Navbar */
 .image {
-  background-image: url(./picture/banner/banner.png);
+  background-image: url(/picture/banner/banner.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
