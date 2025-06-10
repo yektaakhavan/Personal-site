@@ -4,18 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./Responsive-File/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./script.js"></script>
   <title>Akhavan Safaei</title>
+  
 </head>
 
 <body>
   <!-- Scroll to Top Button -->
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
+
+  <!-- Custom Scrollbar -->
+  <div id="custom-scrollbar" class="scrollbar">
+    <div class="force-overflow"></div>
+  </div>
+
+
+
   <!-- Navbar -->
-  <header class="container-fluid image" id="home">
+<header class="container-fluid" id="home">
+  <div class="image">
     <div class="container">
       <nav class="navbar">
         <div class="logo">
@@ -28,20 +40,21 @@
           <a href="#books">کتاب ها</a>
           <a href="#contact-us">ارتباط با ما</a>
         </div>
-        <div class="shopping">
-          <ul>
-            <li>
-              <a style="all: unset;" href="./pages/shopping_cart.html"><i class="fa fa-shopping-cart"
-                  aria-hidden="true"></i></a>
-              <div class="shop-tooltip">سبد خرید</div>
-            </li>
-            <li>
-              <a style="all: unset;" href="./pages/creat_account.html"><i class="fa fa-user" aria-hidden="true"></i></a>
-              <div class="shop-tooltip">حساب کاربری</div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          <div class="shopping">
+            <ul>
+              <li>
+                <a style="all: unset;"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <!-- href="./pages/shopping_cart.html" -->
+                <div class="shop-tooltip">سبد خرید</div>
+              </li>
+              <li>
+                <a style="all: unset;"><i class="fa fa-user" aria-hidden="true"></i></a>
+                <div class="shop-tooltip">حساب کاربری</div> <!--href="./pages/creat_account.html"-->
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -50,8 +63,8 @@
     <div class="title">
       <h2 class="p-title">درباره ما</h2>
     </div>
-    <div class="about-us">
-      <div class="about-desc">
+    <div class="about-us ">
+      <div class="about-desc col-12 " style="width: 50%;">
         <p><strong>علیرضا اخوان صفائی</strong> کارآفرین در حوزه صنایع دستی ترمه و ملیله دوزی در اصفهان هستند که سوابق
           ایشان به شرح زیر است:</p>
         <h3>تحصیلات:</h3>
@@ -59,7 +72,7 @@
         <h3>تألیفات:</h3>
         <p class="indent">دیسیپلین کار - مهر 1403 - انتشارات کلید آموزش</p>
       </div>
-      <img src="./picture/ali/me.jpg" alt="Ali Akhavan Safaei" style="width: 400px; height: 400px" />
+      <img class="col-12" src="./picture/ali/me.jpg" alt="Ali Akhavan Safaei" style="width: 50%; width: 400px; height: 400px" />
     </div>
   </section>
 
@@ -70,16 +83,16 @@
         <h2 class="p-title">مقالات منتشر شده</h2>
       </div>
       <div class="articles col">
-        <p class="description ">
+        <p class="description col-12" style="width: 50%;">
           بسیاری از مردم به دلیل سرگرمی با تلویزیون و موبایل، شب‌ها دیر می‌خوابند و این عادت باعث کاهش انرژی، تمرکز و
           بهره‌وری روزانه می‌شود. یکی از راه‌حل‌ها، استفاده از تکنیک «شب‌به‌خیر دیجیتال» است: همه اعضای خانواده در ساعتی
           مشخص (مثلاً ۲۲) وسایل دیجیتال را کنار بگذارند و به گفت‌وگو، مطالعه یا وقت‌گذرانی با خانواده بپردازند. این روش
           به خواب زودتر و شروع روزی پرانرژی کمک می‌کند.
         </p>
-        <img src="./picture/article/GoodNight/Digital-GoodNight (3).jpg" alt="Digital Goodnight Article"
-          style="width: 400px; height: 400px" />
+        <img class="col-12" src="./picture/article/GoodNight/Digital-GoodNight (3).jpg" alt="Digital Goodnight Article"
+          style="width: 50%; width: 400px; height: 400px" />
       </div>
-      <a href="./pages/articles.html">
+      <a href="./pages/articles.html"> <!--href="./pages/articles.html" -->
         <div class="button">
           <button class="read-btn">مطالعه کامل مقاله<div class="hoverEffect">
               <div></div>
@@ -96,16 +109,17 @@
         <h2 class="p-title">کتاب ها</h2>
       </div>
       <div class="books">
-        <p class="description">
+        <p class="description col-12" style="width: 50%;">
           کتاب <mark>دیسیپلین کار</mark> اهمیت انضباط را به‌ عنوان یکی از اساسی‌ترین اصول برای دستیابی به موفقیت شغلی
           نشان می‌دهد. این کتاب با تأکید بر رفتار حرفه‌ای، اخلاق کاری، توجه به ظاهر، و ارتقای مداوم مهارت‌ها، نقش این
           عوامل را در افزایش بهره‌وری و کیفیت خدمات بررسی می‌کند. همچنین تفاوت میان محیط‌های کاری منظم و بی‌نظم و تأثیر
           آن‌ها بر پیشرفت فردی و تیمی به‌طور دقیق توضیح داده شده است. هدف این کتاب نشان دادن این است که چگونه رعایت
           دیسیپلین می‌تواند کار کردن را لذت‌بخش‌تر و مسیر موفقیت را هموارتر کند.
         </p>
-        <img src="./picture/books/Book-Picture.jpg" alt="Discipline Work Book" style="width: 400px; height: 400px" />
+        <img class="col-12" src="./picture/books/Book-Picture.jpg" alt="Discipline Work Book"
+          style="width: 50%; width: 400px; height: 400px" />
       </div>
-      <a>
+      <a href="./pages/books.html">
         <div class="button">
           <button class="read-btn">مشاهده و خرید کتاب<div class="hoverEffect">
               <div></div>
@@ -116,16 +130,19 @@
   </section>
 
   <!-- Contact Us Section -->
-  <section class="container contact-us" id="contact-us">
-    <div class="title contact-title">
-      <h2 class="p-title">ارتباط با ما</h2>
-    </div>
-    <div class="contact-desc">
-      <p>جهت ارتباط با موسسه ما و درخواست همکاری می‌توانید از طریق شماره های زیر یا ارسال ایمیل ارتباط برقرار کنید.</p>
-      <h3>تلفن تماس:</h3>
-      <p class="indent">09108083995</p>
-      <h3>آدرس ایمیل:</h3>
-      <p class="indent">akhavansafaei00@gmail.com</p>
+  <section class="container" id="contact-us">
+    <div class="contact-us">
+      <div class="title contact-title">
+        <h2 class="p-title">ارتباط با ما</h2>
+      </div>
+      <div class="contact-desc">
+        <p>جهت ارتباط با موسسه ما و درخواست همکاری می‌توانید از طریق شماره های زیر یا ارسال ایمیل ارتباط برقرار کنید.
+        </p>
+        <h3>تلفن تماس:</h3>
+        <p class="indent">09108083995</p>
+        <h3>آدرس ایمیل:</h3>
+        <p class="indent">akhavansafaei00@gmail.com</p>
+      </div>
     </div>
   </section>
 
@@ -198,7 +215,7 @@
   </footer>
 
 
-  <script src="./script.js"></script>
+
 </body>
 
 </html>

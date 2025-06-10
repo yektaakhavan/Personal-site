@@ -54,6 +54,30 @@ img {
     background-color: #555;
 }
 
+
+/* Adjust the scroll bar size */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to top, rgb(28, 58, 148), rgb(73, 125, 189), rgb(122, 153, 217));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background-image: linear-gradient(to top, rgb(122, 153, 217), rgb(73, 125, 189), rgb(28, 58, 148));
+}
+
+
+
 .container-fluid {
     width: 100%;
     height: auto;
@@ -76,7 +100,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px;
+    height: 80px;
     font-size: 20px;
 }
 
@@ -188,14 +212,14 @@ p {
 
 /* footer */
 .footer {
-    height: 400px;
+    height: 250px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    height: auto;
+    /* height: auto; */
 }
 
 .footer p {
