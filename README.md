@@ -1,8 +1,21 @@
-# Repo introduction
+# 📚 Author's Personal Website
 
----
+A responsive and dynamic personal website built with React to showcase an author's biography, articles, books, and more.
 
-This project involves designing and developing a complete personal website using HTML, CSS, and JavaScript, designed to showcase skills and projects. The website has different sections and I am currently working on improving the responsive features and optimizing the user experience
+## ✨ Features
+
+- **Home Page** – Introduction and overview of the author.
+- **Biography** – A detailed section about the author's background and achievements.
+- **Articles** – A collection of published articles with titles and descriptions.
+- **Books** – Display of the author’s books with images, summaries, and pricing.
+- **Sign-Up Page** – A registration form for new users.
+- **Shopping Cart** – Add books to cart and manage purchases.
+
+## 🛠️ Built With
+
+- React
+- JavaScript (ES6+)
+- HTML5 & CSS3
 
 ---
 
